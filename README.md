@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/ncsbh7jo85k10xuw/branch/master?svg=true)](https://ci.appveyor.com/project/Berengalina/patterns-1/branch/master)
