@@ -32,6 +32,21 @@ public class DataGenerator {
             );
         }
 
+        public static String generateByFakerNameForeign(String locale) {
+            Faker faker = new Faker(new Locale("es"));
+            return new String(
+                    faker.name().fullName()
+            );
+        }
+
+        public static String generateByFakerPhoneForeign(String locale) {
+            Faker faker = new Faker(new Locale("es"));
+            return new String(
+                    faker.phoneNumber().phoneNumber()
+            );
+        }
+
+
 
         public static String generateFirstDateOfMeeting() {
             String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
@@ -54,6 +69,11 @@ public class DataGenerator {
             return firstDate;
         }
 
+        public static String generateNameWithRussianSymbolsAndHyphen() {
+            String name = "Подъёмова Любовь-Майя";
+            return name;
+
+        }
 
         public static String generateCity() {
             String[] adminCities = new String[]{"Москва", "Санкт-Петербург", "Калуга", "Владимир", "Краснодар", "Майкоп", "Уфа", "Пермь",
