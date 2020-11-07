@@ -47,7 +47,6 @@ public class DataGenerator {
         }
 
 
-
         public static String generateFirstDateOfMeeting() {
             String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             return firstDate;

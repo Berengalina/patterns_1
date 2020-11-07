@@ -30,7 +30,7 @@ public class RegistrationTest {
     }
 
     @Test
-    void shouldNotRegisterCardDeliveryByName() {
+    void shouldNotRegisterByName() {
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
@@ -42,8 +42,9 @@ public class RegistrationTest {
         $("[data-test-id=name].input_invalid").shouldHave(exactText("Фамилия и имя Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
-    @Test //тест должен падать, на форме нет проверки на валидность номера телефона (начинается на 7), на ввод принимается даже 1 цифра
-    void shouldNotRegisterCardDeliveryByPhone() {
+    @Test
+        //тест должен падать, на форме нет проверки на валидность номера телефона (начинается на 7), на ввод принимается даже 1 цифра
+    void shouldNotRegisterByPhone() {
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
@@ -63,7 +64,7 @@ public class RegistrationTest {
 
 
     @Test
-    void shouldRegisterCardDeliveryNameSymbol() {   //тест не должен падать, но падает из-за символа ё
+    void shouldRegisterWithSymbolName() {   //тест не должен падать, но падает из-за символа ё
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
@@ -80,7 +81,6 @@ public class RegistrationTest {
         $(byText("Перепланировать")).click();
         $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareSecondDateOfMeeting()));
     }
-
 
 
 }
