@@ -20,11 +20,12 @@ public class RegistrationTest {
         $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhone("ru"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateFirstDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareFirstDateOfMeeting()));
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateSecondDateOfMeeting());
         $(byText("Запланировать")).click();
         $(byText("Перепланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateSecondDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareSecondDateOfMeeting()));
     }
 
 }

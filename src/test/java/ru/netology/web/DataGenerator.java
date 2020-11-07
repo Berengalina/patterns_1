@@ -44,6 +44,16 @@ public class DataGenerator {
             return secondDate;
         }
 
+        public static String compareFirstDateOfMeeting() {
+            String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+            return firstDate;
+        }
+
+        public static String compareSecondDateOfMeeting() {
+            String firstDate = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+            return firstDate;
+        }
+
 
         public static String generateCity() {
             String[] adminCities = new String[]{"Москва", "Санкт-Петербург", "Калуга", "Владимир", "Краснодар", "Майкоп", "Уфа", "Пермь",
