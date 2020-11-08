@@ -20,13 +20,13 @@ public class RegistrationTest {
         $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhone("ru"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareFirstDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateFirstDateOfMeeting()));
         $(byText("Запланировать")).click();
         $("[data-test-id=replan-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateSecondDateOfMeeting());
         $(byText("Перепланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareSecondDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateSecondDateOfMeeting()));
     }
 
     @Test
@@ -53,13 +53,13 @@ public class RegistrationTest {
         $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhoneForeign("en"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareFirstDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateFirstDateOfMeeting()));
         $(byText("Запланировать")).click();
         $("[data-test-id=replan-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateSecondDateOfMeeting());
         $(byText("Перепланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareSecondDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateSecondDateOfMeeting()));
     }
 
 
@@ -73,13 +73,13 @@ public class RegistrationTest {
         $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhone("ru"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareFirstDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateFirstDateOfMeeting()));
         $(byText("Запланировать")).click();
         $("[data-test-id=replan-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateSecondDateOfMeeting());
         $(byText("Перепланировать")).click();
-        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.compareSecondDateOfMeeting()));
+        $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateSecondDateOfMeeting()));
     }
 
 

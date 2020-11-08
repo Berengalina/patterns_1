@@ -2,6 +2,7 @@ package ru.netology.web;
 
 import com.github.javafaker.Faker;
 
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -48,24 +49,14 @@ public class DataGenerator {
 
 
         public static String generateFirstDateOfMeeting() {
-            String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
             return firstDate;
         }
 
 
         public static String generateSecondDateOfMeeting() {
-            String secondDate = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            String secondDate = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
             return secondDate;
-        }
-
-        public static String compareFirstDateOfMeeting() {
-            String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-            return firstDate;
-        }
-
-        public static String compareSecondDateOfMeeting() {
-            String firstDate = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-            return firstDate;
         }
 
         public static String generateNameWithRussianSymbolsAndHyphen() {
