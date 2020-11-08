@@ -35,7 +35,7 @@ public class RegistrationTest {
         $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateFirstDateOfMeeting());
-        $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateByFakerNameForeign("en"));
+        $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateByFakerNameForeign("es"));
         $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhone("ru"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
@@ -50,7 +50,7 @@ public class RegistrationTest {
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.Registration.generateFirstDateOfMeeting());
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateByFakerName("ru"));
-        $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhoneForeign("en"));
+        $("[data-test-id=phone] input").setValue(DataGenerator.Registration.generateByFakerPhoneForeign("es"));
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
         $("[data-test-id=success-notification] .notification__content").waitUntil(visible, 15000).shouldHave(text("Встреча успешно запланирована на " + DataGenerator.Registration.generateFirstDateOfMeeting()));
