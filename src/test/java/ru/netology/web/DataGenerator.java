@@ -13,11 +13,6 @@ public class DataGenerator {
     private DataGenerator() {
     }
 
-    public static class Registration {
-        private Registration() {
-        }
-
-
         public static String generateByFakerName(String locale) {
             Faker faker = new Faker(new Locale("ru"));
             return new String(
@@ -33,20 +28,12 @@ public class DataGenerator {
             );
         }
 
-        public static String generateByFakerNameForeign(String locale) {
-            Faker faker = new Faker(new Locale("es"));
-            return new String(
-                    faker.name().fullName()
-            );
-        }
-
-        public static String generateByFakerPhoneForeign(String locale) {
-            Faker faker = new Faker(new Locale("es"));
-            return new String(
-                    faker.phoneNumber().phoneNumber()
-            );
-        }
-
+    public static String generateByFakerNameForeign(String locale) {
+        Faker faker = new Faker(new Locale("es"));
+        return new String(
+                faker.name().fullName()
+        );
+    }
 
         public static String generateFirstDateOfMeeting() {
             String firstDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
@@ -59,7 +46,7 @@ public class DataGenerator {
             return secondDate;
         }
 
-        public static String generateNameWithRussianSymbolsAndHyphen() {
+        public static String setNameWithSymbols() {
             String name = "Подъёмова Любовь-Майя";
             return name;
 
@@ -75,4 +62,4 @@ public class DataGenerator {
         }
 
     }
-}
+
