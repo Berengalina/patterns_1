@@ -28,6 +28,14 @@ public class DataGenerator {
         );
     }
 
+    public static String generateByFakerDigit() {
+        Faker faker = new Faker();
+        return new String(
+                faker.number().digit()
+        );
+    }
+
+
     public static String generateByFakerNameForeign(String locale) {
         Faker faker = new Faker(new Locale("es"));
         return new String(

@@ -50,7 +50,7 @@ public class RegistrationTest {
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         $("[data-test-id=date] input").setValue(DataGenerator.generateFirstDateOfMeeting());
         $("[data-test-id=name] input").setValue(DataGenerator.generateByFakerName("ru"));
-        $("[data-test-id=phone] input").setValue("0");
+        $("[data-test-id=phone] input").setValue(DataGenerator.generateByFakerDigit());
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
         $("[data-test-id=phone] .input_invalid").waitUntil(visible, 15000).shouldHave(text("Ошибка"));  //указала произвольный текст ошибки, т.к. на форме ее нет
