@@ -1,4 +1,4 @@
-package ru.netology.web;
+package ru.netology.web.data;
 
 import com.github.javafaker.Faker;
 
@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.Random;
 
 
-public class DataGenerator {
-    private DataGenerator() {
+public class DataHelper {
+    private DataHelper() {
     }
 
     public static String generateByFakerName(String locale) {
         Faker faker = new Faker(new Locale("ru"));
         return new String(
-                faker.name().fullName()
+                faker.name().fullName().replace('ё', 'е')
         );
     }
 
